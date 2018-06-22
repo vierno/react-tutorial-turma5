@@ -9,7 +9,7 @@ export default class Comments extends Component {
   };
   componentDidMount() {
     // Requisição e seto o estado
-    fetch("https://jsonplaceholder.typicode.com/posts/1/comments").then(
+    fetch(`https://jsonplaceholder.typicode.com/posts/${this.props.id}/comments`).then(
       response => {
         response.json().then(data => {
           this.setState({

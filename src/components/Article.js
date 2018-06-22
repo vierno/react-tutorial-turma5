@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {history} from "react-router-dom";
 
 export default class Article extends Component {
   state = {
