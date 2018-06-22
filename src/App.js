@@ -1,15 +1,18 @@
-import React, { Component } from 'react';
-import './App.css';
-import Article from "./components/Article"
-import Comments from "./components/Comments"
+import React, { Component } from "react";
+import { Route, BrowserRouter } from "react-router-dom";
+import "./App.css";
+import ArticlePage from "./pages/ArticlePage";
+import HomePage from "./pages/HomePage";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Article />
-        <Comments />
-      </div>
+      <BrowserRouter>
+        <React.Fragment>
+          <Route path="/article/:id" component={ArticlePage} />
+          <Route path="/" exact component={HomePage} />
+        </React.Fragment>
+      </BrowserRouter>
     );
   }
 }

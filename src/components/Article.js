@@ -6,7 +6,7 @@ export default class Article extends Component {
     body: "A matéria estará dispnível em breve",
   }
   componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/posts/3/").then(response => {
+    fetch(`https://jsonplaceholder.typicode.com/posts/${this.props.id}/`).then(response => {
       response.json().then(data => {
         this.setState({
           title: data.title,
