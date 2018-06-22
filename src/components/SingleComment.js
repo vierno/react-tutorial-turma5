@@ -15,7 +15,11 @@ export default class SingleComment extends Component {
       <div className="comment">
         <p className="comment_user">{this.props.user}</p>
         {this.state.open ? (
-          <div className="comment_body">{this.props.body}</div>
+          <div className="comment_body">
+            {this.props.children.split("\n").map((block, i)=> {
+              return <p key={i}>{block}</p>
+            })}
+          </div>
         ) : null}
         <button onClick={this.handleClick}>
           {this.state.open ? "Esconder" : "Mostrar"} comentário

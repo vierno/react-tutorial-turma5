@@ -22,7 +22,9 @@ export default class Article extends Component {
           <h1 className="App-title">{this.state.title}</h1>
         </header>
         <div className="body">
-          {this.state.body}
+          {this.state.body.split("\n").map((block, i) => {
+            return <p key={i}>{block}</p>
+          })} 
         </div>
       </React.Fragment>
     );
